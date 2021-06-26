@@ -14,7 +14,7 @@ class Week extends Component {
     }
     static getDerivedStateFromProps(props,state){
         if(props.date+""==="") return ({});
-        return ({date : props.date});           //date is always in number format
+        return ({date : props.date});          
     }
     shouldComponentUpdate(props){
         if(props.view !== "Week" || props.date+""==="") return false;
@@ -32,7 +32,6 @@ class Week extends Component {
         function weekInfo(str,day) {
             let daydata= [];
             return new Promise(async (resolve) => {
-                console.log(daydata);
                 if(day < 1 || day > 30){
                     resolve(daydata);
                 }
@@ -48,7 +47,6 @@ class Week extends Component {
                         daydata.push(currday[i].task);
                     }
                     resolve(daydata);
-                    console.log(daydata);
                 });
             });
         }
@@ -61,15 +59,11 @@ class Week extends Component {
     render() {
         const curr= this.state;
         let i=0;
-        console.log(curr.show);
         return (
-            <div>
+            <div className="WeekParent">
                 {
                     curr.show.map((day,ind)=>(
-                    <div>
-                        {
-                            day
-                        }
+                    <div className="WeekDayParent">
                         <div key={ind} className="Wday">
                             {curr.weekDays[i++]}
                         </div>

@@ -7,16 +7,16 @@
     height: 60px;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* position of sub containers of flex box*/
-    align-items: center; /* items positioned at center of sub container*/
+    justify-content: space-between;
+    align-items: center;
     color: black;
     border-bottom: 2px solid rgb(214, 214, 214);
 }
 .header2 {
     display: flex;
     height: 45px;
-    justify-content: space-between; /* position of sub containers of flex box*/
-    align-items: center; /* items shifted to left of sub container*/
+    justify-content: space-between; 
+    align-items: center;
     border-bottom: 2px solid rgb(214, 214, 214);
 }
 .headerFont {
@@ -106,21 +106,29 @@
     text-align: center;
     flex-direction: column;
     text-transform: capitalize;
+}.WeekDayParent,.WeekParent {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
 }
-/* For Laptops, Computers */
+@media only screen and (max-width: 495px) {
+    .WeekParent{
+        flex-direction: column;
+        justify-content: flex-start
+    }
+}
 @media only screen and (min-width: 495px) {
-    /* When min width exceeds 350px*/
     .header {
         flex-direction: row;
         height: 45px;
-        justify-content: center; /* position of sub containers of flex box*/
-        align-items: center; /* items shifted to left of sub container*/
+        justify-content: center;
+        align-items: center;
     }
     .header2 {
         display: flex;
         height: 45px;
-        justify-content: space-between; /* position of sub containers of flex box*/
-        align-items: center; /* items shifted to left of sub container*/
+        justify-content: space-between;
+        align-items: center;
     }
     .input {
         margin-left: 1%;

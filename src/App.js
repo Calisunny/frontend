@@ -58,7 +58,7 @@ class App extends Component {
                 await Axios.get("https://schedule-calender.herokuapp.com/profile", {
                     params: { name: useName },
                 }).then((res) => {
-                    const data = res.data; //JSON
+                    const data = res.data; 
                     for (let i = 0; i < data.length; i++) {
                         const date = data[i].date.substring(5, 10);
                         profiledata.push(date);
