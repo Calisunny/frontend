@@ -4,7 +4,7 @@
 .header {
     background-color: white;
     text-align: center;
-    height: 30px;
+    height: 60px;
     width: 100%;
     display: flex;
     justify-content: space-between; /* position of sub containers of flex box*/
@@ -26,6 +26,7 @@
     display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
 }
 .input {
     padding: 0%;
@@ -43,12 +44,13 @@
     border-width: 1px;
     background-color: rgb(236, 236, 236);
     border-color: grey;
+    
 }
 .oneLine {
     display: flex;
     min-width: 60px;
 }.oneLine input{
-    height: 25px;
+    height: 30px;
 }
 .viewAll {
     font-size: 90%;
@@ -128,9 +130,16 @@
     }
     .headerFont {
         display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 100%;
         width: 220px;
         height: 100%;
+        justify-content: center;
+    }.header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .selector {
         height: 100%;

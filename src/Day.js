@@ -48,7 +48,6 @@ class Day extends Component {
     }
     render() {
         const curr= this.state;
-        console.log(curr.show,curr.date);
         return (
             <div className="dayResults">
                 <br />

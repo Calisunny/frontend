@@ -43,13 +43,10 @@ html {
 .oneLine input {
     background-color: #ffffff;
     outline-width: 0px;
-    padding-left: 4px;
+    padding-left: 50px;
     min-height: 18px;
     border: 1px solid #eee;
-    border-radius: 18px;
-    border-radius: 64px;
-    border-radius: 18px;
-    border-radius: 18px;
+    width: 200px;
     border-radius: 18px;
     background: #ffffff;
     box-shadow: inset 5px 5px 16px #e3e3e3, inset -5px -5px 16px #ffffff;

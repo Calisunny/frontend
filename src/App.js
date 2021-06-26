@@ -71,7 +71,6 @@ class App extends Component {
             });
         };
         let data = await getName(name);
-        console.log(data);
         this.setState({ show: data });
     }
     render() {
