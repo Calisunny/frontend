@@ -34,7 +34,6 @@ class Day extends Component {
                     params: { name : str, date : date},
                 }).then(async (response) => {
                     let data= response.data;
-                    console.log(response);
                     for (let i = 0; i < data.length; i++) {
                         dbdata.push(data[i].starttime+"-"+data[i].endtime);
                         dbdata.push(data[i].task);

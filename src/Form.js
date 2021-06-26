@@ -15,7 +15,6 @@ class Form extends Component {
     }
     send = () => {
         let curr= this.state;
-        console.log((curr.start).parseInt,(curr.end).parseInt);
         if((curr.start).parseInt >= (curr.end).parseInt){
             window.alert("Invalid Start and End Time");
             return;
@@ -34,12 +33,10 @@ class Form extends Component {
             window.alert("Schedule is clashing"); 
             return;
         }
-        console.log(curr.name,curr.date,curr.start,curr.end,curr.task);
         Axios.post("https://schedule-calender.herokuapp.com/insert",
             {params:{name: curr.name, date:curr.date, start: curr.start,
                 end: curr.end, task: curr.task}}
         ).then((response)=>{
-            console.log(response);
             window.location.reload();
         });
     };

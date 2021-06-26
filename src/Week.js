@@ -67,6 +67,9 @@ class Week extends Component {
                 {
                     curr.show.map((day,ind)=>(
                     <div>
+                        {
+                            day
+                        }
                         <div key={ind} className="Wday">
                             {curr.weekDays[i++]}
                         </div>
