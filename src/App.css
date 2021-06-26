@@ -1,0 +1,155 @@
+.App {
+    text-align: center;
+}
+.header {
+    background-color: white;
+    text-align: center;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* position of sub containers of flex box*/
+    align-items: center; /* items positioned at center of sub container*/
+    color: black;
+    border-bottom: 2px solid rgb(214, 214, 214);
+}
+.header2 {
+    display: flex;
+    height: 45px;
+    justify-content: space-between; /* position of sub containers of flex box*/
+    align-items: center; /* items shifted to left of sub container*/
+    border-bottom: 2px solid rgb(214, 214, 214);
+}
+.headerFont {
+    font-size: 80%;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.input {
+    padding: 0%;
+    margin: 0%;
+    font-size: 90%;
+    height: 50%;
+    border-width: 2px;
+    border-color: grey;
+    background-color: rgb(236, 236, 236);
+}
+.selector {
+    height: 60%;
+    font-size: 90%;
+    margin: 0px;
+    border-width: 1px;
+    background-color: rgb(236, 236, 236);
+    border-color: grey;
+}
+.oneLine {
+    display: flex;
+    min-width: 60px;
+}.oneLine input{
+    height: 25px;
+}
+.viewAll {
+    font-size: 90%;
+    padding: 0%;
+    margin-left: 2%;
+}
+.back{
+    padding: 0%;
+    margin: 4px;
+    font-size: 60%;
+    text-align: center;
+    height: 20px;
+    width: 30px;
+}
+.m0 {
+    margin: 0%;
+}
+.viewType{
+    font-size: 70%;
+    margin: 4px;
+}.teacherContainer{
+    min-height: 200px;
+}.data {
+    text-transform: capitalize;
+}.back{
+    background-color: #fff;
+    outline-width: 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    margin-left: 20px;
+}.viewType{
+    margin-right: 20px !important;
+    border: none;
+    outline-width: 0;
+}.viewType option{
+    border: none;
+    outline-width: 0;
+}.midInput{
+    width: 100px;
+    border: none;
+    outline-width: 0;
+    background-color: #eee;
+    padding-left: 20px;
+    padding: 10px;
+    border-radius: 8px;
+}.backpadding {
+    margin-right: 10px;
+}.dayResults{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    text-transform: capitalize;
+}
+/* For Laptops, Computers */
+@media only screen and (min-width: 495px) {
+    /* When min width exceeds 350px*/
+    .header {
+        flex-direction: row;
+        height: 45px;
+        justify-content: center; /* position of sub containers of flex box*/
+        align-items: center; /* items shifted to left of sub container*/
+    }
+    .header2 {
+        display: flex;
+        height: 45px;
+        justify-content: space-between; /* position of sub containers of flex box*/
+        align-items: center; /* items shifted to left of sub container*/
+    }
+    .input {
+        margin-left: 1%;
+        height: 65%;
+        font-size: 100%;
+        width: 72%;
+    }
+    .headerFont {
+        display: flex;
+        font-size: 100%;
+        width: 220px;
+        height: 100%;
+    }
+    .selector {
+        height: 100%;
+        font-size: 80%;
+        width: 99%;
+        max-width: 170px;
+    }
+    .oneLine {
+        display: flex;
+        width: 90%;
+        min-width: 220px;
+    }
+    .back{
+        height: 25px;
+        width: 50px;
+        font-size: 80%;
+    }
+    .viewType{
+        font-size: 100%;
+        margin: 4px;
+    }
+}
