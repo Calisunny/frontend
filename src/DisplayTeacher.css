@@ -61,8 +61,8 @@ html {
     background-color: #fff;
     transform: scale(1);
     position: fixed;
-    right: 40px;
-    bottom: 40px;
+    right: 15px;
+    bottom: 15px;
 }
 .visibleForm,
 .hiddenForm {

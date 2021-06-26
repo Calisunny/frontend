@@ -15,6 +15,7 @@ class Form extends Component {
     }
     send = () => {
         let curr= this.state;
+        console.log((curr.start).parseInt,(curr.end).parseInt);
         if((curr.start).parseInt >= (curr.end).parseInt){
             window.alert("Invalid Start and End Time");
             return;
