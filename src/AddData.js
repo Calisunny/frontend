@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import "./DisplayTeacher.css"
+import Axios from "axios";
 
 class AddData extends Component {
     constructor(props) {
         super(props)
         this.state = {
-             
+            start: "",
+            end: "",
+            task: "",
         }
     }
     makeVisible = (e) => {
@@ -17,6 +20,35 @@ class AddData extends Component {
         var element = document.getElementById("Form");
         element.classList.remove("visibleForm");
         element.classList.add("hiddenForm");
+    }
+    send = () => {
+        let curr= this.state;
+        let props= this.props;
+        if((curr.start).parseInt >= (curr.end).parseInt){
+            window.alert("Invalid Start and End Time");
+            return;
+        }
+        function getCount(){
+            return new Promise(async (resolve) => {
+                await Axios.get("https://schedule-calender.herokuapp.com/check", {
+                    params:{name: props.str ,starttime : curr.start,endtime : curr.end},
+                }).then(async (response) => {
+                    resolve(response.data);
+                });
+            })
+        }
+        let count = getCount();
+        if(count > 0){
+            window.alert("Schedule is clashing"); 
+            return;
+        }
+        console.log(props.str,props.date);
+        Axios.post("https://schedule-calender.herokuapp.com/insert",
+            {params:{name: props.str, date: props.date, start: curr.start,
+                end: curr.end, task: curr.task}}
+        ).then((response)=>{
+            window.location.reload();
+        });
     }
     render(){
         return (

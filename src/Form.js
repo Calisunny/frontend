@@ -19,7 +19,7 @@ class Form extends Component {
             window.alert("Invalid Start and End Time");
             return;
         }
-        const getCount = () => {
+        function getCount(){
             return new Promise(async (resolve) => {
                 await Axios.get("https://schedule-calender.herokuapp.com/check", {
                     params:{name: curr.name ,starttime : curr.start,endtime : curr.end},
@@ -39,7 +39,7 @@ class Form extends Component {
         ).then((response)=>{
             window.location.reload();
         });
-    };
+    }
     hide = () => {
         var element = document.getElementById("Form");
         element.classList.remove("visibleForm");
