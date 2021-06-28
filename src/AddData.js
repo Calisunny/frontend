@@ -31,7 +31,7 @@ class AddData extends Component {
         function getCount(){
             return new Promise(async (resolve) => {
                 await Axios.get("https://schedule-calender.herokuapp.com/check", {
-                    params:{name: props.name ,starttime : curr.start,endtime : curr.end},
+                    params:{name: props.str ,starttime : curr.start,endtime : curr.end},
                 }).then(async (response) => {
                     resolve(response.data);
                 }).catch((err)=>console.log(err));
@@ -42,14 +42,14 @@ class AddData extends Component {
             window.alert("Schedule is clashing"); 
             return;
         }
-        console.log(props.name, props.date, curr.start, curr.end, curr.task);
+        console.log(props.str, props.date, curr.start, curr.end, curr.task);
         Axios.post("https://schedule-calender.herokuapp.com/insert",
-            {params:{name: props.name, date: "2021-06-"+props.date, start: curr.start,
+            {params:{name: props.str, date: "2021-06-"+props.date, start: curr.start,
                 end: curr.end, task: curr.task}}
         ).then((response)=>{
             window.location.reload();
         });
-        console.log(props.name, props.date, curr.start, curr.end, curr.task);
+        console.log(props.str, props.date, curr.start, curr.end, curr.task);
     }
     render(){
         return (
