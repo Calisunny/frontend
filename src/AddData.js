@@ -22,18 +22,16 @@ class AddData extends Component {
         element.classList.add("hiddenForm");
     }
     send = () => {
-        console.log("hi");
         let curr= this.state;
         let props= this.props;
         if((curr.start).parseInt >= (curr.end).parseInt){
             window.alert("Invalid Start and End Time");
             return;
         }
-        console.log("valid");
         function getCount(){
             return new Promise(async (resolve) => {
                 await Axios.get("https://schedule-calender.herokuapp.com/check", {
-                    params:{name: props.str ,starttime : curr.start,endtime : curr.end},
+                    params:{name: props.name ,starttime : curr.start,endtime : curr.end},
                 }).then(async (response) => {
                     resolve(response.data);
                 });
@@ -44,9 +42,8 @@ class AddData extends Component {
             window.alert("Schedule is clashing"); 
             return;
         }
-        console.log(props.str,props.date);
         Axios.post("https://schedule-calender.herokuapp.com/insert",
-            {params:{name: props.str, date: props.date, start: curr.start,
+            {params:{name: props.name, date: "2021-06-"+props.date, start: curr.start,
                 end: curr.end, task: curr.task}}
         ).then((response)=>{
             window.location.reload();
