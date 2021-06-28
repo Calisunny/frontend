@@ -34,7 +34,7 @@ class AddData extends Component {
                     params:{name: props.name ,starttime : curr.start,endtime : curr.end},
                 }).then(async (response) => {
                     resolve(response.data);
-                });
+                }).catch((err)=>console.log(err));
             })
         }
         let count = getCount();
@@ -42,12 +42,14 @@ class AddData extends Component {
             window.alert("Schedule is clashing"); 
             return;
         }
+        console.log(props.name, props.date, curr.start, curr.end, curr.task);
         Axios.post("https://schedule-calender.herokuapp.com/insert",
             {params:{name: props.name, date: "2021-06-"+props.date, start: curr.start,
                 end: curr.end, task: curr.task}}
         ).then((response)=>{
             window.location.reload();
         });
+        console.log(props.name, props.date, curr.start, curr.end, curr.task);
     }
     render(){
         return (
