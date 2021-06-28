@@ -22,12 +22,14 @@ class AddData extends Component {
         element.classList.add("hiddenForm");
     }
     send = () => {
+        console.log("hi");
         let curr= this.state;
         let props= this.props;
         if((curr.start).parseInt >= (curr.end).parseInt){
             window.alert("Invalid Start and End Time");
             return;
         }
+        console.log("valid");
         function getCount(){
             return new Promise(async (resolve) => {
                 await Axios.get("https://schedule-calender.herokuapp.com/check", {
