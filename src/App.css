@@ -68,6 +68,7 @@
 }
 .teacherContainer {
     min-height: 200px;
+    padding: 10px;
 }
 .data {
     text-transform: capitalize;
@@ -103,11 +104,12 @@
     outline-width: 0;
 }
 .midInput {
-    width: 40px;
+    width: 30px;
+    height: 8px;
+    font-size: 80%;
     border: none;
     outline-width: 0;
     background-color: #eee;
-    padding-left: 20px;
     padding: 10px;
     border-radius: 8px;
 }
@@ -176,6 +178,8 @@
 
     }.dataContainer {
         margin-right: 20px;
+    }.back {
+        margin-left: -23px;
     }
 }
 @media only screen and (min-width: 495px) {
@@ -224,17 +228,18 @@
         height: 25px;
         width: 50px;
         font-size: 80%;
+        margin-left: 40px;
     }
     .viewType {
         font-size: 100%;
         margin: 4px;
     }
     .midInput {
-        width: 100px;
+        width: 30px;
+        height: 10px;
         border: none;
         outline-width: 0;
         background-color: #eee;
-        padding-left: 20px;
         padding: 10px;
         border-radius: 8px;
     }
