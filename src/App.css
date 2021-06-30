@@ -15,7 +15,7 @@
 .header2 {
     display: flex;
     height: 45px;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid rgb(214, 214, 214);
 }
@@ -44,12 +44,12 @@
     border-width: 1px;
     background-color: rgb(236, 236, 236);
     border-color: grey;
-    
 }
 .oneLine {
     display: flex;
     min-width: 60px;
-}.oneLine input{
+}
+.oneLine input {
     height: 30px;
 }
 .viewAll {
@@ -57,7 +57,7 @@
     padding: 0%;
     margin-left: 2%;
 }
-.back{
+.back {
     padding: 0%;
     margin: 4px;
     font-size: 60%;
@@ -68,28 +68,34 @@
 .m0 {
     margin: 0%;
 }
-.viewType{
+.viewType {
     font-size: 70%;
     margin: 4px;
-}.teacherContainer{
+}
+.teacherContainer {
     min-height: 200px;
-}.data {
+}
+.data {
     text-transform: capitalize;
-}.back{
+}
+.back {
     background-color: #fff;
     outline-width: 0;
     border: none;
     cursor: pointer;
     width: 100px;
     margin-left: 20px;
-}.viewType{
+}
+.viewType {
     margin-right: 20px !important;
     border: none;
     outline-width: 0;
-}.viewType option{
+}
+.viewType option {
     border: none;
     outline-width: 0;
-}.midInput{
+}
+.midInput {
     width: 100px;
     border: none;
     outline-width: 0;
@@ -97,24 +103,28 @@
     padding-left: 20px;
     padding: 10px;
     border-radius: 8px;
-}.backpadding {
+}
+.backpadding {
     margin-right: 10px;
-}.dayResults{
+}
+.dayResults {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
     text-transform: capitalize;
-}.WeekDayParent,.WeekParent {
+}
+.WeekDayParent,
+.WeekParent {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
 }
 @media only screen and (max-width: 495px) {
-    .WeekParent{
+    .WeekParent {
         flex-direction: column;
-        justify-content: flex-start
+        justify-content: flex-start;
     }
 }
 @media only screen and (min-width: 495px) {
@@ -144,7 +154,8 @@
         width: 220px;
         height: 100%;
         justify-content: center;
-    }.header {
+    }
+    .header {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -160,12 +171,12 @@
         width: 90%;
         min-width: 220px;
     }
-    .back{
+    .back {
         height: 25px;
         width: 50px;
         font-size: 80%;
     }
-    .viewType{
+    .viewType {
         font-size: 100%;
         margin: 4px;
     }

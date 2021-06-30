@@ -76,7 +76,8 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}#Form input {
+}
+#Form input {
     outline-width: 0;
     border: none;
     background-color: #eee;
@@ -98,7 +99,8 @@ html {
 }
 .w {
     width: 50px;
-}.formButtons {
+}
+.formButtons {
     margin-top: 10px;
 }
 @media only screen and (max-width: 900px) {
@@ -107,10 +109,12 @@ html {
         max-width: 250px;
         min-width: 200px;
     }
-}@media only screen and (max-height: 732px) {
-    #Form{
+}
+@media only screen and (max-height: 732px) {
+    #Form {
         font-size: 15px;
-    }#Form input{
+    }
+    #Form input {
         margin: 0;
         padding: 5px;
         padding-left: 10px;
@@ -166,17 +170,21 @@ html {
         width: 80%;
         max-width: 250px;
         min-width: 175px;
-    }.createInside p {
+    }
+    .createInside p {
         display: none;
-    }.createInside{
+    }
+    .createInside {
         right: 10px;
         bottom: 10px;
         width: 35px;
-    }.createInside img{
+    }
+    .createInside img {
         margin: 0px;
         padding: 0px;
         transform: translateX(-5px);
-    }.teacherContainer{
+    }
+    .teacherContainer {
         min-height: 100px;
     }
 }
