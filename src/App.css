@@ -1,4 +1,10 @@
-.App {
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0.226);
+}.App {
     text-align: center;
 }
 .header {
@@ -67,6 +73,10 @@
     text-transform: capitalize;
     width: 100%;
 }
+.data-week {
+    display: flex;
+    flex-direction: column;
+}
 .back {
     padding: 0%;
     margin: 4px;
@@ -93,7 +103,7 @@
     outline-width: 0;
 }
 .midInput {
-    width: 100px;
+    width: 40px;
     border: none;
     outline-width: 0;
     background-color: #eee;
@@ -140,8 +150,11 @@
 }
 @media only screen and (max-width: 495px) {
     .WeekParent {
+        height: 90vh;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-around;
         flex-direction: column;
-        justify-content: flex-start;
         margin: 20px;
     }
     .WeekDayParent {
@@ -155,10 +168,21 @@
     }
     .Wday {
         margin-right: 20px;
+    }.data-week{
+        display: flex;
+        flex-direction : row;
+        justify-content: space-around;
+        margin-right: -100px;
+
+    }.dataContainer {
+        margin-right: 20px;
     }
 }
 @media only screen and (min-width: 495px) {
     .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: row;
         height: 45px;
         justify-content: center;
@@ -185,11 +209,6 @@
         height: 100%;
         justify-content: center;
     }
-    .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     .selector {
         height: 100%;
         font-size: 80%;
@@ -209,5 +228,14 @@
     .viewType {
         font-size: 100%;
         margin: 4px;
+    }
+    .midInput {
+        width: 100px;
+        border: none;
+        outline-width: 0;
+        background-color: #eee;
+        padding-left: 20px;
+        padding: 10px;
+        border-radius: 8px;
     }
 }

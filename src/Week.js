@@ -52,7 +52,6 @@ class Week extends Component {
     }
     render() {
         const curr= this.state;
-        console.log(curr.show);
         let i=0;
         return (
             <div className="WeekParent">
@@ -63,12 +62,12 @@ class Week extends Component {
                             {curr.weekDays[i++]}
                         </div>
                         
-                        <div className= "data">
+                        <div className= "data data-week">
                             {
                                 day.map((obj,index)=>(
                                     obj.task===undefined ? (<React.Fragment/>) :
                                 (
-                                <div key={index}>
+                                <div className="dataContainer" key={index}>
                                     <div className="range">
                                         {obj.starttime.substring(0, 5)} -
                                         {obj.endtime.substring(0, 5)}
