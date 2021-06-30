@@ -31,9 +31,7 @@ class Month extends Component {
                 }).then(async (response) => {
                      let currday= response.data;
                     for (let i = 0; i < currday.length; i++) {
-                        daydata.push(currday[i].starttime.substring(0, 5)+"-"+
-                        currday[i].endtime.substring(0, 5));
-                        daydata.push(currday[i].task);
+                        daydata.push(currday[i]);
                     }
                     resolve(daydata);
                 });
@@ -43,7 +41,7 @@ class Month extends Component {
             let daydata= await monthInfo(name,i);
             dbdata.push(daydata);
         }
-        this.setState({data : dbdata});
+        this.setState({show : dbdata});
     }
     render() {
         let days= [];
@@ -59,12 +57,19 @@ class Month extends Component {
                             <div className="bigText" key={ind}>
                                 {days[ind]}
                             </div>
-                            <div>
-                                {
-                                    day.map((data,index)=>(
-                                        <div className="data" key={index}>
-                                            {data}
+                            <div className= "data">
+                            {
+                                day.map((obj,index)=>(
+                                obj.task===undefined ? (<React.Fragment/>) :
+                                (
+                                    <div key={index}>
+                                        <div className="range">
+                                            {obj.starttime.substring(0, 5)} -
+                                            {obj.endtime.substring(0, 5)}
                                         </div>
+                                                <div className="task">{obj.task}</div>
+                                            </div>
+                                        )
                                     ))
                                 }
                             </div>

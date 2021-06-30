@@ -65,6 +65,7 @@
 }
 .data {
     text-transform: capitalize;
+    width: 100%;
 }
 .back {
     padding: 0%;
@@ -116,20 +117,44 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-}.WeekParent {
+}
+.WeekParent {
     display: flex;
     align-items: flex-start;
 }
-.WeekDayParent{
+.WeekDayParent {
     flex-direction: column;
-}.Wday {
+}
+.Wday,
+.range,
+.task {
     display: flex;
     justify-content: center;
+}
+.Wday {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.Wend {
+    color: red;
 }
 @media only screen and (max-width: 495px) {
     .WeekParent {
         flex-direction: column;
         justify-content: flex-start;
+        margin: 20px;
+    }
+    .WeekDayParent {
+        flex-direction: row;
+    }
+    .Wday,
+    .range,
+    .task {
+        justify-content: space-around;
+        align-items: center;
+    }
+    .Wday {
+        margin-right: 20px;
     }
 }
 @media only screen and (min-width: 495px) {

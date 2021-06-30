@@ -59,7 +59,7 @@ class Week extends Component {
                 {
                     curr.show.map((day,ind)=>(
                     <div className="WeekDayParent">
-                        <div key={ind} className="Wday">
+                        <div key={ind} className={(i===0||i===6) ? "Wday Wend" : "Wday"}>
                             {curr.weekDays[i++]}
                         </div>
                         
@@ -67,15 +67,15 @@ class Week extends Component {
                             {
                                 day.map((obj,index)=>(
                                     obj.task===undefined ? (<React.Fragment/>) :
-                                    (
-                                        <div key={index}>
-                                            <div className="range">
-                                                {obj.starttime.substring(0, 5)} -
-                                                {obj.endtime.substring(0, 5)}
-                                            </div>
-                                            <div className="task">{obj.task}</div>
-                                        </div>
-                                    )
+                                (
+                                <div key={index}>
+                                    <div className="range">
+                                        {obj.starttime.substring(0, 5)} -
+                                        {obj.endtime.substring(0, 5)}
+                                    </div>
+                                     <div className="task">{obj.task}</div>
+                                </div>
+                                )
                                 ))
                             }
                         </div>

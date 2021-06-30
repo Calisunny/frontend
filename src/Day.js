@@ -59,6 +59,7 @@ class Day extends Component {
                             {obj.endtime.substring(0, 5)}
                         </div>
                         <div className="task">{obj.task}</div>
+                        <hr />
                     </div>
                 ))}
             </div>
