@@ -116,9 +116,15 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+}.WeekParent {
+    display: flex;
+    align-items: flex-start;
 }
 .WeekDayParent{
     flex-direction: column;
+}.Wday {
+    display: flex;
+    justify-content: center;
 }
 @media only screen and (max-width: 495px) {
     .WeekParent {
