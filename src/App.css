@@ -121,6 +121,9 @@
     justify-content: space-evenly;
     flex-direction: row;
 }
+.WeekDayParent{
+    flex-direction: column;
+}
 @media only screen and (max-width: 495px) {
     .WeekParent {
         flex-direction: column;
