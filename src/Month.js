@@ -55,10 +55,10 @@ class Month extends Component {
                 {
                     show.map((day,ind)=>(
                         <div key={ind} className="teacherContainer">
-                            <div className="bigText" key={ind}>
+                            <div className="bigText" key={ind+"t"}>
                                 <h2 key={ind}>{days[ind]}</h2>
                             </div>
-                            <div className= "data">
+                            <div className= "data" key={ind+"d"}>
                             {
                                 day.map((obj,index)=>(
                                 obj.task===undefined ? (<React.Fragment/>) :
