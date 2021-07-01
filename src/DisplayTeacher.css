@@ -39,7 +39,7 @@ html {
 .oneLine input {
     background-color: #ffffff;
     outline-width: 0px;
-    padding-left: 50px;
+    padding-left: 20px;
     min-height: 18px;
     border: 1px solid #eee;
     width: 200px;

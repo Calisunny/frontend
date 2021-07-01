@@ -14,6 +14,10 @@ class Topbar extends Component {
         };
     }
     changeView = (e) => {
+        let ele= document.getElementById("mi");
+        if(e.target.value === "Month"){
+            ele.style.display= "none";
+        }else ele.style.display= "block";
         this.setState({view: e.target.value});
     }
     changeVal = (e) => {
@@ -41,7 +45,7 @@ class Topbar extends Component {
                     <input
                         onChange={(e) => this.changeVal(e)}
                         type="number"
-                        id="vol"
+                        id="mi"
                         value= {curr.date}
                         min= {0}
                         max= {max}

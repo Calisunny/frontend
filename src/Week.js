@@ -9,7 +9,7 @@ class Week extends Component {
             weekDays: ["SUN","MON","TUE","WED","THURS","FRI","SAT"],
             show: [],
             startDay: -1,
-            date: 1
+            date: 0
         }
     }
     static getDerivedStateFromProps(props,state){
@@ -72,7 +72,7 @@ class Week extends Component {
                                         {obj.starttime.substring(0, 5)} -
                                         {obj.endtime.substring(0, 5)}
                                     </div>
-                                     <div className="task">{obj.task}</div>
+                                    <div className="task">{obj.task}</div>
                                 </div>
                                 )
                                 ))
@@ -83,6 +83,9 @@ class Week extends Component {
                 }
             </div>
         )
+    }
+    componentDidMount() {
+        this.getData();
     }
 }
 

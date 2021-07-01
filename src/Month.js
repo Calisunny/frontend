@@ -18,6 +18,7 @@ class Month extends Component {
         this.getData();
     }
     async getData() {
+        console.log("called");
         const name = this.props.str;
         let dbdata = [];
         function monthInfo(str,day) {
@@ -29,7 +30,7 @@ class Month extends Component {
                 await Axios.get("https://schedule-calender.herokuapp.com/data", {
                     params: {name : str, date : date},
                 }).then(async (response) => {
-                     let currday= response.data;
+                    let currday= response.data;
                     for (let i = 0; i < currday.length; i++) {
                         daydata.push(currday[i]);
                     }
@@ -47,13 +48,13 @@ class Month extends Component {
         let days= [];
         let show= this.state.show;
         for(let i=1; i<=30; i++){
-           days.push("June "+{i});
+           days.push("June "+ i);
         }
         return (
-            <div>
+            <div className="teacherParent">
                 {
                     show.map((day,ind)=>(
-                        <div key={ind} className="Mbox">
+                        <div key={ind} className="teacherContainer">
                             <div className="bigText" key={ind}>
                                 {days[ind]}
                             </div>
@@ -67,17 +68,20 @@ class Month extends Component {
                                             {obj.starttime.substring(0, 5)} -
                                             {obj.endtime.substring(0, 5)}
                                         </div>
-                                                <div className="task">{obj.task}</div>
-                                            </div>
-                                        )
-                                    ))
-                                }
+                                        <div className="task">{obj.task}</div>
+                                    </div>
+                                )
+                                ))
+                            }
                             </div>
                         </div>
                     ))
                 }
             </div>
         )
+    }
+    componentDidMount() {
+        this.getData();
     }
 }
 

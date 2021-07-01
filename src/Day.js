@@ -7,7 +7,7 @@ class Day extends Component {
         super(props);
         this.state = {
             show: [],
-            date: "1",
+            date: "0",
         };
         this.getData = this.getData.bind(this);
     }
