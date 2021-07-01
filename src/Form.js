@@ -41,7 +41,7 @@ class Form extends Component {
         });
     }
     hide = () => {
-        var element = document.getElementById("Form");
+        let element = document.getElementById("Form");
         element.classList.remove("visibleForm");
         element.classList.add("hiddenForm");
     }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import Axios from "axios";
+import "./DisplayTeacher.css";
 import "./App.css";
 
 class Month extends Component {
@@ -18,7 +19,6 @@ class Month extends Component {
         this.getData();
     }
     async getData() {
-        console.log("called");
         const name = this.props.str;
         let dbdata = [];
         function monthInfo(str,day) {
@@ -56,7 +56,7 @@ class Month extends Component {
                     show.map((day,ind)=>(
                         <div key={ind} className="teacherContainer">
                             <div className="bigText" key={ind}>
-                                {days[ind]}
+                                <h2 key={ind}>{days[ind]}</h2>
                             </div>
                             <div className= "data">
                             {
@@ -64,11 +64,13 @@ class Month extends Component {
                                 obj.task===undefined ? (<React.Fragment/>) :
                                 (
                                     <div key={index}>
-                                        <div className="range">
+                                        <div className="range" key={index+"r"}>
                                             {obj.starttime.substring(0, 5)} -
                                             {obj.endtime.substring(0, 5)}
                                         </div>
-                                        <div className="task">{obj.task}</div>
+                                        <div className="task" key={index+"t"}>
+                                            {obj.task}
+                                        </div>
                                     </div>
                                 )
                                 ))

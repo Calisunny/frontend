@@ -67,12 +67,14 @@ class Week extends Component {
                                 day.map((obj,index)=>(
                                     obj.task===undefined ? (<React.Fragment/>) :
                                 (
-                                <div className="dataContainer" key={index}>
-                                    <div className="range">
+                                <div className="dataContainer" key={index+""+{ind}}>
+                                    <div className="range" key={index+"r"}>
                                         {obj.starttime.substring(0, 5)} -
                                         {obj.endtime.substring(0, 5)}
                                     </div>
-                                    <div className="task">{obj.task}</div>
+                                    <div className="task" key={index+"t"}>
+                                        {obj.task}
+                                    </div>
                                 </div>
                                 )
                                 ))

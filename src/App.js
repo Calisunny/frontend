@@ -28,7 +28,7 @@ class App extends Component {
         window.location.reload();
     };
     makeVisible = (e) => {
-        var element = document.getElementById("Form");
+        let element = document.getElementById("Form");
         element.classList.add("visibleForm");
         element.classList.remove("hiddenForm");
     };
