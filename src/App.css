@@ -76,27 +76,25 @@
 }
 .data-week {
     display: flex;
-    flex-direction: column;
 }
 .back {
     padding: 0%;
     margin: 4px;
+    margin-left: 0px;
     font-size: 60%;
     text-align: center;
     height: 20px;
-    width: 30px;
+    width: 50px;
     background-color: #fff;
     outline-width: 0;
     border: none;
     cursor: pointer;
-    width: 100px;
-    margin-left: 20px;
 }
 .viewType {
     margin-right: 20px !important;
     border: none;
     outline-width: 0;
-    font-size: 70%;
+    font-size: 80%;
     margin: 4px;
 }
 .viewType option {
@@ -124,63 +122,35 @@
     flex-direction: column;
     text-transform: capitalize;
 }
-.WeekDayParent,
 .WeekParent {
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-}
-.WeekParent {
-    display: flex;
-    align-items: flex-start;
-}
-.WeekDayParent {
+    justify-content: space-around;
     flex-direction: column;
 }
-.Wday,
-.range,
+.WeekDayParent {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 80%;
+}
+.range{
+    min-width: 70px;
+}
 .task {
     display: flex;
     justify-content: center;
 }
 .Wday {
-    margin-bottom: 10px;
+    width: 50px;
+    height: 40px;
+    margin: 12px;
     font-weight: bold;
 }
 .Wend {
     color: red;
 }
-@media only screen and (max-width: 495px) {
-    .WeekParent {
-        height: 90vh;
-        display: flex;
-        align-items: stretch;
-        justify-content: space-around;
-        flex-direction: column;
-        margin: 20px;
-    }
-    .WeekDayParent {
-        flex-direction: row;
-    }
-    .Wday,
-    .range,
-    .task {
-        justify-content: space-around;
-        align-items: center;
-    }
-    .Wday {
-        margin-right: 20px;
-    }.data-week{
-        display: flex;
-        flex-direction : row;
-        justify-content: space-around;
-        margin-right: -100px;
-
-    }.dataContainer {
-        margin-right: 20px;
-    }.back {
-        margin-left: -23px;
-    }
+.dataContainer {
+    margin-right: 8px;
 }
 @media only screen and (min-width: 495px) {
     .header {
@@ -242,5 +212,12 @@
         background-color: #eee;
         padding: 10px;
         border-radius: 8px;
+    }
+    .Wday{
+        width: 80px;
+        height: 45px;
+    }
+    .WeekDayParent{
+        font-size: 100%;
     }
 }
