@@ -84,6 +84,7 @@ class UpdateForm extends Component {
                         task: props.task,
                         newTask: curr.task,
                     },headers: {
+                        'Content-Type': 'application/json',
                         'Access-Control-Allow-Origin' : '*',
                         'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
                         'Access-Control-Allow-Headers':'Content-Type,X-Requested-With,X-HTTP-Method-Override',}
