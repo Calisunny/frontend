@@ -48,46 +48,47 @@ class UpdateForm extends Component {
         }
         if (operation === "u") {
             console.log(props.name,"2021-06-" + props.date,props.start,curr.newStart,props.end,props.task,curr.newTask);
-            function updateData(){
-                    return new Promise(async (resolve) => {
-                        await Axios.put(
-                            "https://schedule-calender.herokuapp.com/update",
-                            {
-                                params: {
-                                    name: props.name,
-                                    date: "2021-06-" + props.date,
-                                    start: props.start,
-                                    newStart: curr.newStart,
-                                    end: props.end,
-                                    task: props.task,
-                                    newTask: curr.newTask,  
-                                },
-                            }
-                        ).then(async (response) => {
-                                let temp = resolve(response.data);
-                                console.log(temp);
-                            })
-                            .catch((err) => console.log(err));
-                    });
-            }
-            updateData()
-            // await Axios.put(
-            //     "https://schedule-calender.herokuapp.com/update", //update
-            //     {
-            //         params: {
-            //             name: props.name,
-            //             date: "2021-06-" + props.date,
-            //             start: props.start,
-            //             newStart: curr.newStart,
-            //             end: props.end,
-            //             task: props.task,
-            //             newTask: curr.task,
-            //         },
-            //     }
-            // ).then((response) => {
-            //     console.log(response);
-            //     //window.location.reload();
-            // });
+            // function updateData(){
+
+            //         return new Promise(async (resolve) => {
+            //             await Axios.put(
+            //                 "https://schedule-calender.herokuapp.com/update",
+            //                 {
+            //                     params: {
+            //                         name: props.name,
+            //                         date: "2021-06-" + props.date,
+            //                         start: props.start,
+            //                         newStart: curr.newStart,
+            //                         end: props.end,
+            //                         task: props.task,
+            //                         newTask: curr.newTask,  
+            //                     },
+            //                 }
+            //             ).then(async (response) => {
+            //                     let temp = resolve(response.data);
+            //                     console.log(temp);
+            //                 })
+            //                 .catch((err) => console.log(err));
+            //         });
+            // }
+            // updateData()
+            Axios.put(
+                "https://schedule-calender.herokuapp.com/update", //update
+                {
+                    params: {
+                        name: props.name,
+                        date: "2021-06-" + props.date,
+                        start: props.start,
+                        newStart: curr.newStart,
+                        end: props.end,
+                        task: props.task,
+                        newTask: curr.task,
+                    },
+                }
+            ).then((response) => {
+                console.log(response);
+                //window.location.reload();
+            });
         } else {
             console.log("del");
             function deleteData(){
