@@ -43,7 +43,8 @@ class App extends Component {
                         params: { name: str },
                     }, {
                         headers: { 
-                        "Content-Type": "application/x-www-form-urlencoded"
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        'Access-Control-Allow-Origin': '*'
                       }}
                 ).then(async (response) => {
                     for (let i = 0; i < response.data.length; i++) {
@@ -62,7 +63,11 @@ class App extends Component {
                     "https://schedule-calender.herokuapp.com/profile",
                     {
                         params: { name: useName },
-                    }
+                    }, {
+                        headers: { 
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        'Access-Control-Allow-Origin': '*'
+                      }}
                 ).then((res) => {
                     const data = res.data;
                     for (let i = 0; i < data.length; i++) {
