@@ -72,7 +72,7 @@ class UpdateForm extends Component {
             //         });
             // }
             // updateData()
-            Axios.put(
+            Axios.patch(
                 "https://schedule-calender.herokuapp.com/update", //update
                 {
                     params: {
