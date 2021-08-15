@@ -10,17 +10,6 @@ class UpdateForm extends Component {
             newTask: "",
         };
     }
-    // static getDerivedStateFromProps(props, state) {
-    //     return {
-    //         name: props.name,
-    //         date: props.date,
-    //         start: props.start,
-    //         newStart: props.start,
-    //         end: props.end,
-    //         task: props.task,
-    //         newTask: props.task,
-    //     };
-    // }
     hide = () => {
         var element = document.getElementById("UpdForm");
         element.classList.remove("visibleUpd");
@@ -73,8 +62,7 @@ class UpdateForm extends Component {
                     },
                 }
             ).then((response) => {
-                console.log(response);
-                // window.location.reload();
+                window.location.reload();
             });
         } else {
             console.log("del");
@@ -88,12 +76,14 @@ class UpdateForm extends Component {
                     },
                 }
             ).then((response) => {
+                console.log(response);
                 window.location.reload();
             });
         }
     };
     render() {
         let curr = this.state;
+        let props = this.props;
         return (
             <div>
                 <div id="UpdForm" className="hiddenUpd">
@@ -107,7 +97,7 @@ class UpdateForm extends Component {
                             }}
                             className="w m0"
                             type="time"
-                            placeholder={curr.start}
+                            placeholder={props.start}
                         />
                     </div>
                     <p className="m0">End Time</p>
@@ -119,7 +109,7 @@ class UpdateForm extends Component {
                             }}
                             className="w m0"
                             type="time"
-                            placeholder= {curr.end}
+                            placeholder= {props.end}
                         />
                     </div>
                     <p className="m0">Task</p>
@@ -131,7 +121,7 @@ class UpdateForm extends Component {
                             }}
                             className="w m0"
                             type="text"
-                            placeholder= {curr.task}
+                            placeholder= {props.task}
                         />
                     </div>
                     <div className="formButtons">
