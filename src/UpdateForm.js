@@ -60,11 +60,12 @@ class UpdateForm extends Component {
                                     newStart: curr.newStart,
                                     end: props.end,
                                     task: props.task,
-                                    newTask: curr.newTask,
+                                    newTask: curr.newTask,  
                                 },
                             }
                         ).then(async (response) => {
-                                resolve(response.data);
+                                let temp = resolve(response.data);
+                                console.log(temp);
                             })
                             .catch((err) => console.log(err));
                     });
@@ -205,3 +206,7 @@ export default UpdateForm;
 
 
 // Select * from teachers where name='hareesh' AND date LIKE '2021-06-22%' AND starttime LIKE '02:00%';
+
+//update teachers set starttime='09:00', endtime='10:00', task='DSA' WHERE name='hareesh' AND task='hindi' 
+
+//SET SQL_SAFE_UPDATES = 0;
