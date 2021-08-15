@@ -63,6 +63,7 @@ class UpdateForm extends Component {
             return;
         }
         if (operation === "u") {
+            console.log(curr);
             Axios.put(
                 "https://schedule-calender.herokuapp.com/update", //update
                 {
