@@ -47,7 +47,7 @@ class UpdateForm extends Component {
             return;
         }
         if (operation === "u") {
-            console.log(props.name,"2021-06-" + props.date,props.start,curr.newStart,props.end,props.task,curr.task,this.state.task);
+            console.log(props.name,"2021-06-" + props.date,props.start,curr.newStart,props.end,props.task,curr.newTask);
             function updateData(){
                     return new Promise(async (resolve) => {
                         await Axios.put(
@@ -60,7 +60,7 @@ class UpdateForm extends Component {
                                     newStart: curr.newStart,
                                     end: props.end,
                                     task: props.task,
-                                    newTask: curr.task,
+                                    newTask: curr.newTask,
                                 },
                             }
                         ).then(async (response) => {
