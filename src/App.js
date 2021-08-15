@@ -41,7 +41,10 @@ class App extends Component {
                     "https://schedule-calender.herokuapp.com/search",
                     {
                         params: { name: str },
-                    }
+                    }, {
+                        headers: { 
+                        "Content-Type": "application/x-www-form-urlencoded"
+                      }}
                 ).then(async (response) => {
                     for (let i = 0; i < response.data.length; i++) {
                         let profiledata = await personData(response.data[i].name);
