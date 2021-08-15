@@ -48,38 +48,80 @@ class UpdateForm extends Component {
         }
         if (operation === "u") {
             console.log(curr);
-            Axios.put(
-                "https://schedule-calender.herokuapp.com/update", //update
-                {
-                    params: {
-                        name: props.name,
-                        date: "2021-06-" + props.date,
-                        start: props.start,
-                        newStart: curr.newStart,
-                        end: props.end,
-                        task: props.task,
-                        newTask: curr.task,
-                    },
-                }
-            ).then((response) => {
-                console.log(response);
-                //window.location.reload();
-            });
+            function updateData(){
+                    return new Promise(async (resolve) => {
+                        await Axios.put(
+                            "https://schedule-calender.herokuapp.com/update",
+                            {
+                                params: {
+                                    name: props.name,
+                                    date: "2021-06-" + props.date,
+                                    start: props.start,
+                                    newStart: curr.newStart,
+                                    end: props.end,
+                                    task: props.task,
+                                    newTask: curr.task,
+                                },
+                            }
+                        )
+                            .then(async (response) => {
+                                resolve(response.data);
+                            })
+                            .catch((err) => console.log(err));
+                    });
+            }
+            updateData()
+            // await Axios.put(
+            //     "https://schedule-calender.herokuapp.com/update", //update
+            //     {
+            //         params: {
+            //             name: props.name,
+            //             date: "2021-06-" + props.date,
+            //             start: props.start,
+            //             newStart: curr.newStart,
+            //             end: props.end,
+            //             task: props.task,
+            //             newTask: curr.task,
+            //         },
+            //     }
+            // ).then((response) => {
+            //     console.log(response);
+            //     //window.location.reload();
+            // });
         } else {
             console.log("del");
-            Axios.delete(
-                "https://schedule-calender.herokuapp.com/delete", //delete
-                {
-                    params: {
-                        name: props.name,
-                        date: "2021-06-" + props.date,
-                        start: props.start,
-                    },
-                }
-            ).then((response) => {
-                console.log(response);
-                // window.location.reload();
-            });
+            function deleteData(){
+                return new Promise(async (resolve) => {
+                    await Axios.delete(
+                        "https://schedule-calender.herokuapp.com/delete",
+                        {
+                            params: {
+                                name: props.name,
+                                date: "2021-06-" + props.date,
+                                start: props.start,
+                            },
+                        }
+                    )
+                        .then(async (response) => {
+                            resolve(response.data);
+                        })
+                        .catch((err) => console.log(err));
+                });
+        }
+        deleteData()
+            // await Axios.delete(
+            //     "https://schedule-calender.herokuapp.com/delete", //delete
+            //     {
+            //         params: {
+            //             name: props.name,
+            //             date: "2021-06-" + props.date,
+            //             start: props.start,
+            //         },
+            //     }
+            // ).then((response) => {
+            //     console.log(response);
+            //     // window.location.reload();
+            // });
         }
     };
     render() {
