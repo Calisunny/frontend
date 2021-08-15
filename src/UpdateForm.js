@@ -12,6 +12,7 @@ class UpdateForm extends Component {
             newStart: "",
             end: "",
             task: "",
+            newTask: "",
         };
     }
     static getDerivedStateFromProps(props, state) {
@@ -22,6 +23,7 @@ class UpdateForm extends Component {
             newStart: props.start,
             end: props.end,
             task: props.task,
+            newTask: props.task,
         };
     }
     hide = () => {
@@ -61,15 +63,17 @@ class UpdateForm extends Component {
             return;
         }
         if (operation === "u") {
-            Axios.post(
-                "https://schedule-calender.herokuapp.com/update", //update
+            Axios.put(
+                "https://localhost:3001/update", //update
                 {
                     params: {
                         name: curr.name,
                         date: "2021-06-" + curr.date,
-                        start: curr.newStart,
+                        start: curr.start,
+                        newStart: curr.newStart,
                         end: curr.end,
                         task: curr.task,
+                        newTask: curr.task,
                     },
                 }
             ).then((response) => {
@@ -124,7 +128,7 @@ class UpdateForm extends Component {
                     <div>
                         <input
                             onChange={(e) => {
-                                this.setState({ task: e.target.value });
+                                this.setState({ newTask: e.target.value });
                             }}
                             className="w m0"
                             type="text"
