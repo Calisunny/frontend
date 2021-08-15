@@ -63,7 +63,7 @@ class UpdateForm extends Component {
             return;
         }
         if (operation === "u") {
-            console.log(curr);
+            console.log(curr,this.state);
             Axios.put(
                 "https://schedule-calender.herokuapp.com/update", //update
                 {
@@ -119,7 +119,8 @@ class UpdateForm extends Component {
                     <div>
                         <input
                             onChange={(e) => {
-                                this.setState({ end: e.target.value });
+                                this.setState({ end: e.target.value },
+                                    ()=>{console.log(e.target.value)});
                             }}
                             className="w m0"
                             type="time"
@@ -130,7 +131,8 @@ class UpdateForm extends Component {
                     <div>
                         <input
                             onChange={(e) => {
-                                this.setState({ newTask: e.target.value });
+                                this.setState({ newTask: e.target.value },
+                                    ()=>{console.log(e.target.value)});
                             }}
                             className="w m0"
                             type="text"
