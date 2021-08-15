@@ -34,11 +34,9 @@ class UpdateForm extends Component {
                             endtime: props.end,
                         },
                     }
-                )
-                    .then(async (response) => {
-                        resolve(response.data);
-                    })
-                    .catch((err) => console.log(err));
+                ).then(async (response) => {
+                    resolve(response.data);
+                }).catch((err) => console.log(err));
             });
         }
         let count = getCount();
@@ -47,7 +45,7 @@ class UpdateForm extends Component {
             return;
         }
         if (operation === "u") {
-            console.log(props.name,"2021-06-" + props.date,props.start,curr.newStart,props.end,props.task,curr.newTask);
+            // console.log(props.name,"2021-06-" + props.date,props.start,curr.newStart,props.end,props.task,curr.newTask);
             // function updateData(){
 
             //         return new Promise(async (resolve) => {
@@ -72,7 +70,7 @@ class UpdateForm extends Component {
             //         });
             // }
             // updateData()
-            Axios.patch(
+            Axios.put(
                 "https://schedule-calender.herokuapp.com/update", //update
                 {
                     params: {
@@ -83,11 +81,7 @@ class UpdateForm extends Component {
                         end: props.end,
                         task: props.task,
                         newTask: curr.task,
-                    },headers: {
-                        'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin' : '*',
-                        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                        'Access-Control-Allow-Headers':'Content-Type,X-Requested-With,X-HTTP-Method-Override',}
+                    }
                 }
             ).then((response) => {
                 console.log(response);
@@ -106,14 +100,13 @@ class UpdateForm extends Component {
                                 start: props.start,
                             },
                         }
-                    )
-                        .then(async (response) => {
-                            resolve(response.data);
-                        })
-                        .catch((err) => console.log(err));
+                    ).then(async (response) => {
+                        resolve(response.data);
+                    })
+                    .catch((err) => console.log(err));
                 });
         }
-        deleteData()
+        deleteData();
             // await Axios.delete(
             //     "https://schedule-calender.herokuapp.com/delete", //delete
             //     {
@@ -130,7 +123,7 @@ class UpdateForm extends Component {
         }
     };
     render() {
-        let curr = this.state;
+        // let curr = this.state;
         let props = this.props;
         return (
             <div>
