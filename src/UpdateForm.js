@@ -83,7 +83,10 @@ class UpdateForm extends Component {
                         end: props.end,
                         task: props.task,
                         newTask: curr.task,
-                    },
+                    },headers: {
+                        'Access-Control-Allow-Origin' : '*',
+                        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                        'Access-Control-Allow-Headers':'Content-Type,X-Requested-With,X-HTTP-Method-Override',}
                 }
             ).then((response) => {
                 console.log(response);
