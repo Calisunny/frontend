@@ -62,7 +62,8 @@ class UpdateForm extends Component {
                     },
                 }
             ).then((response) => {
-                window.location.reload();
+                console.log(response);
+                //window.location.reload();
             });
         } else {
             console.log("del");
@@ -77,7 +78,7 @@ class UpdateForm extends Component {
                 }
             ).then((response) => {
                 console.log(response);
-                window.location.reload();
+                // window.location.reload();
             });
         }
     };
