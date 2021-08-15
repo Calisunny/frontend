@@ -4,7 +4,8 @@
 }
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 0, 0, 0.226);
-}.App {
+}
+.App {
     text-align: center;
 }
 .header {
@@ -133,7 +134,7 @@
     align-items: center;
     font-size: 80%;
 }
-.range{
+.range {
     min-width: 70px;
 }
 .task {
@@ -151,6 +152,16 @@
 }
 .dataContainer {
     margin-right: 8px;
+}
+.menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(195, 252, 233);
+    padding: 10px;
+    border-radius: 8px;
 }
 @media only screen and (min-width: 495px) {
     .header {
@@ -213,7 +224,7 @@
         padding: 10px;
         border-radius: 8px;
     }
-    .WeekDayParent{
+    .WeekDayParent {
         font-size: 100%;
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import Axios from "axios";
+import UpdateForm from "./UpdateForm";
 import "./DisplayTeacher.css";
 import "./App.css";
 
@@ -13,6 +14,10 @@ class Month extends Component {
     shouldComponentUpdate(props){
         if(props.view !== "Month") return false;
         return true;
+    }
+    detailsForUpdate= (obj,day) =>{
+        this.setState({start: obj.starttime.substring(0, 5),
+            end: obj.endtime.substring(0, 5), task: obj.task});
     }
     componentDidUpdate(props){
         if(props.date === this.state.date) return;
@@ -46,24 +51,29 @@ class Month extends Component {
     }
     render() {
         let days= [];
+        const curr= this.state;
+        const props= this.props;
         let show= this.state.show;
         for(let i=1; i<=30; i++){
            days.push("June "+ i);
         }
         return (
             <div className="teacherParent">
+            <UpdateForm name={props.str} start={curr.start} task={curr.task}
+            date={curr.date} end={curr.end} />
                 {
                     show.map((day,ind)=>(
-                        <div key={ind} className="teacherContainer">
+                        <div key={"md"+ind} className="teacherContainer">
                             <div className="bigText" key={ind+"t"}>
-                                <h2 key={ind}>{days[ind]}</h2>
+                                <h2 key={"monthday"+ind}>{days[ind]}</h2>
                             </div>
                             <div className= "data" key={ind+"d"}>
                             {
                                 day.map((obj,index)=>(
                                 obj.task===undefined ? (<React.Fragment/>) :
                                 (
-                                    <div key={index}>
+                                    <div key= {"m"+index}
+                                    onClick={()=>this.detailsForUpdate(obj,day)}>
                                         <div className="range" key={index+"r"}>
                                             {obj.starttime.substring(0, 5)} -
                                             {obj.endtime.substring(0, 5)}

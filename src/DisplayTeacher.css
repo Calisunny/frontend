@@ -63,7 +63,7 @@ html {
     right: 40%;
     bottom: 40%;
 }
-.hiddenForm {
+.hiddenForm , .hidemenu {
     display: none !important;
 }
 #Form {
@@ -95,9 +95,6 @@ html {
 }
 .m0 {
     margin: 0%;
-}
-.w {
-    width: 50px;
 }
 .formButtons {
     margin-top: 10px;
@@ -153,7 +150,6 @@ html {
 }
 .formButtons {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
 }

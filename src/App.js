@@ -21,9 +21,6 @@ class App extends Component {
             this.getData();
         });
     };
-    enter = (e) => {
-        this.setState({ enter: true, chosen: e.target.id });
-    };
     back = () => {
         window.location.reload();
     };
@@ -31,6 +28,9 @@ class App extends Component {
         let element = document.getElementById("Form");
         element.classList.add("visibleForm");
         element.classList.remove("hiddenForm");
+    };
+    enterTeacher = (e) => {
+        this.setState({ enter: true, chosen: e.target.id });
     };
     async getData() {
         let name = this.state.display;
@@ -44,14 +44,14 @@ class App extends Component {
                     }
                 ).then(async (response) => {
                     for (let i = 0; i < response.data.length; i++) {
-                        let profiledata = await getData(response.data[i].name);
+                        let profiledata = await personData(response.data[i].name);
                         dbdata.push(profiledata);
                     }
                     resolve(dbdata);
                 });
             });
         }
-        const getData = (useName) => {
+        const personData = (useName) => {
             return new Promise(async (resolve) => {
                 let profiledata = [];
                 profiledata.push(useName);
@@ -72,6 +72,19 @@ class App extends Component {
         let data = await getName(name);
         this.setState({ show: data });
     }
+    // eventListener=()=>{
+    //     document.querySelector("body").addEventListener("click",(e)=>{
+    //         e.preventDefault();
+    //         const menu= document.getElementById("menu");
+    //         if(e.target.id === "parent"||e.target.id === "head"||e.target.id === "search"){
+    //             menu.classList.add("hidemenu");
+    //         }else{
+    //             menu.style.left = e.clientX+"px";
+    //             menu.style.top= e.clientY+"px";
+    //             menu.classList.remove("hidemenu");
+    //         }
+    //     }); 
+    // }
     render() {
         let curr = this.state;
         let names = [];
@@ -91,14 +104,14 @@ class App extends Component {
             );
         }
         return (
-            <div>
+            <div className= "body">
                 <Topbar textChange={this.textChange} enter={curr.enter} />
-                <div className="teacherParent">
+                <div className="teacherParent" id="parent">
                     {curr.show.map((data, index) => (
                         <div
                             className="teacherContainer"
-                            key={index}
-                            onClick={(e) => this.enter(e)}
+                            key={index+"tc"} id={index+"tc"}
+                            onClick={this.enterTeacher}
                         >
                             <div className="bigText" key={index}>
                                 <h2 id={names[k]}>{names[k++]}</h2>
@@ -143,6 +156,7 @@ class App extends Component {
     }
     componentDidMount() {
         this.getData();
+        // this.eventListener();
     }
 }
 

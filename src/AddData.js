@@ -15,9 +15,9 @@ class AddData extends Component {
         let element = document.getElementById("Form");
         element.classList.add("visibleForm");
         element.classList.remove("hiddenForm");
-    }
+    } 
     hide = () => {
-        var element = document.getElementById("Form");
+        let element = document.getElementById("Form");
         element.classList.remove("visibleForm");
         element.classList.add("hiddenForm");
     }
@@ -52,7 +52,7 @@ class AddData extends Component {
     render(){
         return (
             <div>
-                <div  id="Form" className="hiddenForm">
+                <div id="Form" className="hiddenForm">
                     <h1 className="m0">Add Details</h1> 
                     <p className="m0">Start Time</p>
                     <div>
@@ -109,7 +109,7 @@ class AddData extends Component {
                 />
                 <p>CREATE</p>
             </button>
-            </div>
+        </div>
         )
     }
 }

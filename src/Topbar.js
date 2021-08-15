@@ -64,10 +64,11 @@ class Topbar extends Component {
                 <AddData date={curr.date}  str={this.props.str}/>
             </React.Fragment>
         ) : (
-            <div className="header">
+            <div className="header"  id="head">
                 <div className="headerFont">
                     <div className="oneLine">
                         <input
+                            id= "search "
                             placeholder="🔎 Search Teacher"
                             className="input"
                             type="text"
