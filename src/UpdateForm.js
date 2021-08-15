@@ -6,26 +6,21 @@ class UpdateForm extends Component {
         super(props);
 
         this.state = {
-            name: "",
-            date: "",
-            start: "",
             newStart: "",
-            end: "",
-            task: "",
             newTask: "",
         };
     }
-    static getDerivedStateFromProps(props, state) {
-        return {
-            name: props.name,
-            date: props.date,
-            start: props.start,
-            newStart: props.start,
-            end: props.end,
-            task: props.task,
-            newTask: props.task,
-        };
-    }
+    // static getDerivedStateFromProps(props, state) {
+    //     return {
+    //         name: props.name,
+    //         date: props.date,
+    //         start: props.start,
+    //         newStart: props.start,
+    //         end: props.end,
+    //         task: props.task,
+    //         newTask: props.task,
+    //     };
+    // }
     hide = () => {
         var element = document.getElementById("UpdForm");
         element.classList.remove("visibleUpd");
@@ -47,7 +42,7 @@ class UpdateForm extends Component {
                         params: {
                             name: props.str,
                             starttime: curr.newStart,
-                            endtime: curr.end,
+                            endtime: props.end,
                         },
                     }
                 )
@@ -68,12 +63,12 @@ class UpdateForm extends Component {
                 "https://schedule-calender.herokuapp.com/update", //update
                 {
                     params: {
-                        name: curr.name,
-                        date: "2021-06-" + curr.date,
-                        start: curr.start,
+                        name: props.name,
+                        date: "2021-06-" + props.date,
+                        start: props.start,
                         newStart: curr.newStart,
-                        end: curr.end,
-                        task: curr.task,
+                        end: props.end,
+                        task: props.task,
                         newTask: curr.task,
                     },
                 }
@@ -87,9 +82,9 @@ class UpdateForm extends Component {
                 "https://schedule-calender.herokuapp.com/delete", //delete
                 {
                     params: {
-                        name: curr.name,
+                        name: props.name,
                         date: "2021-06-" + props.date,
-                        start: curr.start,
+                        start: props.start,
                     },
                 }
             ).then((response) => {
