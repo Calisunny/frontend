@@ -47,7 +47,7 @@ class UpdateForm extends Component {
             return;
         }
         if (operation === "u") {
-            console.log(curr,this.state);
+            console.log(curr);
             Axios.put(
                 "https://schedule-calender.herokuapp.com/update", //update
                 {
@@ -92,8 +92,12 @@ class UpdateForm extends Component {
                     <div>
                         <input
                             onChange={(e) => {
-                                this.setState({ newStart: e.target.value },
-                                    ()=>{console.log(e.target.value)});
+                                this.setState(
+                                    { newStart: e.target.value },
+                                    () => {
+                                        console.log(e.target.value);
+                                    }
+                                );
                             }}
                             className="w m0"
                             type="time"
@@ -104,24 +108,29 @@ class UpdateForm extends Component {
                     <div>
                         <input
                             onChange={(e) => {
-                                this.setState({ end: e.target.value },
-                                    ()=>{console.log(e.target.value)});
+                                this.setState({ end: e.target.value }, () => {
+                                    console.log(e.target.value);
+                                });
                             }}
                             className="w m0"
                             type="time"
-                            placeholder= {props.end}
+                            placeholder={props.end}
                         />
                     </div>
                     <p className="m0">Task</p>
                     <div>
                         <input
                             onChange={(e) => {
-                                this.setState({ newTask: e.target.value },
-                                    ()=>{console.log(e.target.value)});
+                                this.setState(
+                                    { newTask: e.target.value },
+                                    () => {
+                                        console.log(e.target.value);
+                                    }
+                                );
                             }}
                             className="w m0"
                             type="text"
-                            placeholder= {props.task}
+                            placeholder={props.task}
                         />
                     </div>
                     <div className="formButtons">
@@ -151,3 +160,6 @@ class UpdateForm extends Component {
 }
 
 export default UpdateForm;
+
+
+// Select * from teachers where name='hareesh' AND date LIKE '2021-06-22%' AND starttime LIKE '02:00%';
