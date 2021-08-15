@@ -77,6 +77,7 @@ class UpdateForm extends Component {
                     },
                 }
             ).then((response) => {
+                console.log(response);
                 window.location.reload();
             });
         } else {
