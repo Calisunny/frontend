@@ -41,11 +41,7 @@ class App extends Component {
                     "https://schedule-calender.herokuapp.com/search",
                     {
                         params: { name: str },
-                    }, {
-                        headers: { 
-                        "Content-Type": "application/x-www-form-urlencoded",
-                        'Access-Control-Allow-Origin': '*'
-                      }}
+                    }
                 ).then(async (response) => {
                     for (let i = 0; i < response.data.length; i++) {
                         let profiledata = await personData(response.data[i].name);
@@ -63,11 +59,7 @@ class App extends Component {
                     "https://schedule-calender.herokuapp.com/profile",
                     {
                         params: { name: useName },
-                    }, {
-                        headers: { 
-                        "Content-Type": "application/x-www-form-urlencoded",
-                        'Access-Control-Allow-Origin': '*'
-                      }}
+                    }
                 ).then((res) => {
                     const data = res.data;
                     for (let i = 0; i < data.length; i++) {
@@ -80,19 +72,6 @@ class App extends Component {
         let data = await getName(name);
         this.setState({ show: data });
     }
-    // eventListener=()=>{
-    //     document.querySelector("body").addEventListener("click",(e)=>{
-    //         e.preventDefault();
-    //         const menu= document.getElementById("menu");
-    //         if(e.target.id === "parent"||e.target.id === "head"||e.target.id === "search"){
-    //             menu.classList.add("hidemenu");
-    //         }else{
-    //             menu.style.left = e.clientX+"px";
-    //             menu.style.top= e.clientY+"px";
-    //             menu.classList.remove("hidemenu");
-    //         }
-    //     }); 
-    // }
     render() {
         let curr = this.state;
         let names = [];
