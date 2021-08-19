@@ -34,9 +34,11 @@ class UpdateForm extends Component {
                             endtime: props.end,
                         },
                     }
-                ).then(async (response) => {
-                    resolve(response.data);
-                }).catch((err) => console.log(err));
+                )
+                    .then(async (response) => {
+                        resolve(response.data);
+                    })
+                    .catch((err) => console.log(err));
             });
         }
         let count = getCount();
@@ -45,81 +47,43 @@ class UpdateForm extends Component {
             return;
         }
         if (operation === "u") {
-            // console.log(props.name,"2021-06-" + props.date,props.start,curr.newStart,props.end,props.task,curr.newTask);
-            // function updateData(){
-
-            //         return new Promise(async (resolve) => {
-            //             await Axios.put(
-            //                 "https://schedule-calender.herokuapp.com/update",
-            //                 {
-            //                     params: {
-            //                         name: props.name,
-            //                         date: "2021-06-" + props.date,
-            //                         start: props.start,
-            //                         newStart: curr.newStart,
-            //                         end: props.end,
-            //                         task: props.task,
-            //                         newTask: curr.newTask,  
-            //                     },
-            //                 }
-            //             ).then(async (response) => {
-            //                     let temp = resolve(response.data);
-            //                     console.log(temp);
-            //                 })
-            //                 .catch((err) => console.log(err));
-            //         });
-            // }
-            // updateData()
-            Axios.put(
-                "https://schedule-calender.herokuapp.com/update", //update
+            let date = props.date;
+            date = "2021-06-" + (date.length === 1 ? "0" + date : date);
+            console.log(
+                props.name,
+                date,
+                props.start,
+                curr.newStart,
+                props.end,
+                props.task,
+                curr.newTask
+            );
+            Axios.put("https://schedule-calender.herokuapp.com/update", {
+                params: {
+                    name: props.name,
+                    date: date,
+                    starttime: props.start,
+                    newStart: curr.newStart,
+                    endtime: props.end,
+                    task: props.task,
+                    newTask: curr.newTask,
+                },
+            }).then((response) => {
+                console.log(response);
+            });
+        } else {
+            console.log(props, curr);
+            Axios.delete(
+                "https://schedule-calender.herokuapp.com/delete", //delete
                 {
                     params: {
-                        name: props.name,
-                        date: "2021-06-" + props.date,
-                        start: props.start,
-                        newStart: curr.newStart,
-                        end: props.end,
                         task: props.task,
-                        newTask: curr.task,
-                    }
+                        name: props.name,
+                    },
                 }
             ).then((response) => {
                 console.log(response);
-                //window.location.reload();
             });
-        } else {
-            console.log("del");
-            function deleteData(){
-                return new Promise(async (resolve) => {
-                    await Axios.delete(
-                        "https://schedule-calender.herokuapp.com/delete",
-                        {
-                            params: {
-                                name: props.name,
-                                date: "2021-06-" + props.date,
-                                start: props.start,
-                            },
-                        }
-                    ).then(async (response) => {
-                        resolve(response.data);
-                    })
-                    .catch((err) => console.log(err));
-                });
-        }
-        deleteData();
-            // await Axios.delete(
-            //     "https://schedule-calender.herokuapp.com/delete", //delete
-            //     {
-            //         params: {
-            //             name: props.name,
-            //             date: "2021-06-" + props.date,
-            //             start: props.start,
-            //         },
-            //     }
-            // ).then((response) => {
-            //     console.log(response);
-            //     // window.location.reload();
-            // });
         }
     };
     render() {
@@ -202,9 +166,8 @@ class UpdateForm extends Component {
 
 export default UpdateForm;
 
-
 // Select * from teachers where name='hareesh' AND date LIKE '2021-06-22%' AND starttime LIKE '02:00%';
 
-//update teachers set starttime='09:00', endtime='10:00', task='DSA' WHERE name='hareesh' AND task='hindi' 
+//update teachers set starttime='09:00', endtime='10:00', task='DSA' WHERE name='hareesh' AND task='hindi'
 
 //SET SQL_SAFE_UPDATES = 0;

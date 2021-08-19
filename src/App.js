@@ -75,8 +75,9 @@ class App extends Component {
     render() {
         let curr = this.state;
         let names = [];
-        for (let i = 0; i < curr.show.length; i++)
+        for (let i = 0; i < curr.show.length; i++){
             names.push(curr.show[i].shift());
+        }
         let k = 0;
         if (curr.enter) {
             return (
@@ -143,7 +144,7 @@ class App extends Component {
     }
     componentDidMount() {
         this.getData();
-        // this.eventListener();
+        // this.eventListener();    
     }
 }
 

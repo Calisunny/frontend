@@ -13,6 +13,9 @@ class Topbar extends Component {
             date: 1,
         };
     }
+    componentDidMount() {
+        console.log(this.props);
+    }
     changeView = (e) => {
         let ele= document.getElementById("mi");
         if(e.target.value === "Month"){
